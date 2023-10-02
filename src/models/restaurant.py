@@ -7,12 +7,12 @@ class Restaurant:
         self.number_served = 0
         self.open = False
 
-    def describe_restaurant(self):
+    def describe_restaurant(self): #MARCELO
         """Imprima uma descrição simples da instância do restaurante."""
         print(f"Esse restaturante chama {self.cuisine_type} and serve {self.cuisine_type}.")
         print(f"Esse restaturante está servindo {self.number_served} consumidores desde que está aberto.")
 
-    def open_restaurant(self):
+    def open_restaurant(self): #MARCELO
         """Imprima uma mensagem indicando que o restaurante está aberto para negócios."""
         if not self.open:
             self.open = False
@@ -21,7 +21,7 @@ class Restaurant:
         else:
             print(f"{self.restaurant_name} já está aberto!")
 
-    def close_restaurant(self):
+    def close_restaurant(self): #MARCELO
         """Imprima uma mensagem indicando que o restaurante está fechado para negócios."""
         if self.open:
             self.open = False
@@ -30,14 +30,14 @@ class Restaurant:
         else:
             print(f"{self.restaurant_name} já está fechado!")
 
-    def set_number_served(self, total_customers):
+    def set_number_served(self, total_customers): #TALES
         """Defina o número total de pessoas atendidas por este restaurante até o momento."""
         if self.open:
             self.number_served = total_customers
         else:
             print(f"{self.restaurant_name} está fechado!")
 
-    def increment_number_served(self, more_customers):
+    def increment_number_served(self, more_customers): #ELTON
         """Aumenta número total de clientes atendidos por este restaurante."""
         if self.open:
             self.number_served = more_customers
