@@ -12,14 +12,21 @@ class IceCreamStand(Restaurant):
         super().__init__(restaurant_name, cuisine_type)
         self.flavors = flavors_list
 
-    def flavors_available(self): #MARCELO
+    def flavors_available(self):  # Marcelo
         """Percorra a lista de sabores disponíveis e imprima."""
         if self.flavors:
-            print("\nNo momento temos os seguintes sabores de sorvete disponíveis:")
+            # Melhoria: Removendo prints (e formatação) de dentro da função e acrescentando returns
+            # print("No momento temos os seguintes sabores de sorvete disponíveis:")
+            flavors = []
             for flavor in self.flavors:
-                print(f"\t-{flavor}")
+                # Melhoria: Removendo prints (e formatação) de dentro da função e acrescentando returns
+                # print(f"\t-{flavor}")
+                flavors.append(f"{flavor}")
+            return ["No momento temos os seguintes sabores de sorvete disponíveis:", flavors]
         else:
-            print("Estamos sem estoque atualmente!")
+            # Melhoria: Removendo prints de dentro das funções e acrescentando returns
+            # print("Estamos sem estoque atualmente!")
+            return "Estamos sem estoque atualmente!"
 
 
     def find_flavor(self, flavor): #TALES
