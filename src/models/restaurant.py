@@ -10,18 +10,24 @@ class Restaurant:
     def describe_restaurant(self):  # Marcelo
         """Imprima uma descrição simples da instância do restaurante."""
 
+        # BUG-01: Retorna cuisine_type ao invés de restaurant_name.
         # print(f"Esse restaturante chama {self.cuisine_type} and serve {self.cuisine_type}.")
         # print(f"Esse restaturante está servindo {self.number_served} consumidores desde que está aberto.")
 
         # Melhoria: Removendo prints de dentro da função e acrescentando returns
-        return [f"Esse restaturante chama {self.cuisine_type} and serve {self.cuisine_type}.",
+        return [f"Esse restaturante chama {self.restaurant_name} and serve {self.cuisine_type}.",
                 f"Esse restaturante está servindo {self.number_served} consumidores desde que está aberto."]
 
     def open_restaurant(self):  # Marcelo
         """Imprima uma mensagem indicando que o restaurante está aberto para negócios."""
         if not self.open:
-            self.open = False
-            self.number_served = -2
+            # BUG-02: Mantém o restaurante fechado ao invés de abri-lo.      #
+            # self.open = False
+            self.open = True
+
+            # BUG-03: Inicializa o número de cliente servidos com um valor negativo.                            #
+            # self.number_served = -2
+            self.number_served = 0
 
             # Melhoria: Removendo prints de dentro da função e acrescentando returns
             # print(f"{self.restaurant_name} agora está aberto!")
