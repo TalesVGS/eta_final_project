@@ -44,14 +44,14 @@ class Restaurant:
             # print(f"{self.restaurant_name} já está fechado!")
             return f"{self.restaurant_name} já está fechado!"
 
-    def set_number_served(self, total_customers): #TALES
+    def set_number_served(self, total_customers):  # Tales
         """Defina o número total de pessoas atendidas por este restaurante até o momento."""
         if self.open:
             self.number_served = total_customers
         else:
             print(f"{self.restaurant_name} está fechado!")
 
-    def increment_number_served(self, more_customers): #ELTON
+    def increment_number_served(self, more_customers):  # Elton
         """Aumenta número total de clientes atendidos por este restaurante."""
         if self.open:
             self.number_served = more_customers

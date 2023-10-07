@@ -53,8 +53,8 @@ class TestRestaurant:
         result = restaurant.close_restaurant()
         assert result == expected_result
 
-    def test_set_number_served(self):
+    def test_set_number_served(self):  # Tales
         assert False
 
-    def test_increment_number_served(self):
+    def test_increment_number_served(self):  # Elton
         assert False
