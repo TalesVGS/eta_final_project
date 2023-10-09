@@ -54,8 +54,11 @@ class Restaurant:
         """Defina o número total de pessoas atendidas por este restaurante até o momento."""
         if self.open:
             self.number_served = total_customers
+            # Melhoria: alterado mensagem de return
+            return f"Total de pessoas atendidas é: {self.number_served}"
         else:
-            print(f"{self.restaurant_name} está fechado!")
+            # Melhoria: Alterado para return
+            return f"{self.restaurant_name} está fechado!"
 
     def increment_number_served(self, more_customers):  # Elton
         """Aumenta número total de clientes atendidos por este restaurante."""
