@@ -28,16 +28,21 @@ class IceCreamStand(Restaurant):
             # print("Estamos sem estoque atualmente!")
             return "Estamos sem estoque atualmente!"
 
+        # Refatorar
 
-    def find_flavor(self, flavor): #TALES
+    def find_flavor(self, flavor):  # TALES
         """Verifica se o sabor informado está disponível."""
         if self.flavors:
             if flavor in self.flavors:
-                print(f"Temos no momento {self.flavors}!")
+                # Alterado para return
+                # Alterado {self.flavors}
+                return f"Temos {flavor} no momento!"
             else:
-                print(f"Não temos no momento {self.flavors}!")
-        else:
-            print("Estamos sem estoque atualmente!")
+                # Alterado para return
+                # Alterado {self.flavors}
+                return f"Não temos {flavor} no momento!"
+            # Alterado para return
+        return "Estamos sem estoque atualmente!"
 
     def add_flavor(self, flavor): #ELTON
         """Add o sabor informado ao estoque."""

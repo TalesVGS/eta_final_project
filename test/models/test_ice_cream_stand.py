@@ -17,8 +17,23 @@ class TestIceCreamStand:
         result = ice_cream_stand.flavors_available()
         assert result == expected_result
 
-    def test_find_flavor(self):  # Tales
-        assert False
+    def test_find_flavor_available(self):  # Tales
+        icecreamstand = IceCreamStand("Tales", "bar", ["Teste", "Caipirinha", "suco"])
+        expected_result = 'Temos Caipirinha no momento!'  # melhorar
+        result = icecreamstand.find_flavor("Caipirinha")
+        assert result == expected_result
+
+    def test_find_flavor_unavailable(self):  # Tales
+        icecreamstand = IceCreamStand("Tales", "bar", ["Teste", "drink", "petiscos"])
+        expected_result = 'Não temos Cerveja no momento!'  # melhorar
+        result = icecreamstand.find_flavor("Cerveja")
+        assert result == expected_result
+
+    def test_find_flavor_out_of_stock(self): # Tales
+        icecreamstand = IceCreamStand("Tales", "bar", [])
+        expected_result = 'Estamos sem estoque atualmente!'
+        result = icecreamstand.find_flavor("Cerveja")
+        assert result == expected_result
 
     def test_add_flavor(self):  # Elton
         assert False
