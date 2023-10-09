@@ -34,14 +34,14 @@ class IceCreamStand(Restaurant):
         """Verifica se o sabor informado está disponível."""
         if self.flavors:
             if flavor in self.flavors:
-                # Alterado para return
-                # Alterado {self.flavors}
+                # Melhoria: Alterado para return
+                # Bug: removido {self.flavors}
                 return f"Temos {flavor} no momento!"
             else:
-                # Alterado para return
-                # Alterado {self.flavors}
+                # Melhoria: Alterado para return
+                # Bug: removido {self.flavors}
                 return f"Não temos {flavor} no momento!"
-            # Alterado para return
+        # Melhoria: Alterado para return
         return "Estamos sem estoque atualmente!"
 
     def add_flavor(self, flavor): #ELTON
