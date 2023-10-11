@@ -63,6 +63,10 @@ class Restaurant:
     def increment_number_served(self, more_customers):  # Elton
         """Aumenta número total de clientes atendidos por este restaurante."""
         if self.open:
-            self.number_served = more_customers
+            # bug
+            # self.number_served = more_customers
+            self.number_served += more_customers
+            # Melhoria: Adicionar mensagem de retorno
         else:
-            print(f"{self.restaurant_name} está fechado!")
+            # Melhoria: Alterado para return
+            return f"{self.restaurant_name} está fechado!"

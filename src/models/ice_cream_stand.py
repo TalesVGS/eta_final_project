@@ -46,11 +46,16 @@ class IceCreamStand(Restaurant):
 
     def add_flavor(self, flavor): #ELTON
         """Add o sabor informado ao estoque."""
-        if self.flavors:
-            if flavor in self.flavors:
-                print("\nSabor já disponivel!")
-            else:
-                self.flavors.append(flavor)
-                print(f"{flavor} adicionado ao estoque!")
+        # bug
+        # if self.flavors:
+        if flavor in self.flavors:
+            # print("\nSabor já disponivel!")
+            return "Sabor já disponivel!"
         else:
-            print("Estamos sem estoque atualmente!")
+            self.flavors.append(flavor)
+            # print(f"{flavor} adicionado ao estoque!")
+            return f"{flavor} adicionado ao estoque!"
+        # bug
+        # else:
+        # print("Estamos sem estoque atualmente!")
+        # return("Estamos sem estoque atualmente!")

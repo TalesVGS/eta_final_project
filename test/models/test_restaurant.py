@@ -68,4 +68,18 @@ class TestRestaurant:
         assert result == expected_result
 
     def test_increment_number_served(self):  # Elton
-        assert False
+        restaurant = Restaurant("Elton", "Japanese")
+        restaurant.open = True
+        restaurant.number_served = 10
+        expected_result = 12
+        restaurant.increment_number_served(2)
+        result = restaurant.number_served
+        assert result == expected_result
+
+    def test_increment_number_served_restaurant_closed(self):  # Elton
+        restaurant = Restaurant("Elton", "Japanese")
+        restaurant.open = False
+        restaurant.number_served = 10
+        expected_result = "Elton está fechado!"
+        result = restaurant.increment_number_served(2)
+        assert result == expected_result
